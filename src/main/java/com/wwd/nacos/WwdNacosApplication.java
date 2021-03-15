@@ -3,6 +3,7 @@ package com.wwd.nacos;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * @ClassName: WwdNacosApplication
@@ -11,6 +12,7 @@ import org.springframework.context.ConfigurableApplicationContext;
  * @create: 2021-03-13 11:20:08
  */
 @SpringBootApplication
+@RequestMapping("/demo")
 public class WwdNacosApplication {
 
     /**
@@ -22,6 +24,7 @@ public class WwdNacosApplication {
         ConfigurableApplicationContext applicationContext = SpringApplication.run(WwdNacosApplication.class, args);
         String userName = applicationContext.getEnvironment().getProperty("user.name");
         String userAge = applicationContext.getEnvironment().getProperty("user.age");
-        System.err.println("user name :"+userName+"; age: "+userAge);
+        String a = applicationContext.getEnvironment().getProperty("a");
+        System.err.println("user name :"+userName+"; age: "+userAge+"; a="+a);
     }
 }
